@@ -1,0 +1,14 @@
+name: Wait for Five Minutes
+
+on:
+  workflow_dispatch:
+
+  repository_dispatch:
+    types: [wait-for-five-minutes]
+
+jobs:
+  wait:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Wait for five minutes
+        run: sleep 300 
