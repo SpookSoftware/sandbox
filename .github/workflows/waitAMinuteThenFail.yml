@@ -1,4 +1,4 @@
-name: Wait for a Minute
+name: Wait a minute then fail
 
 on:
   workflow_dispatch:
@@ -11,3 +11,5 @@ jobs:
     steps:
       - name: Wait for a minute
         run: sleep 60
+      - name: Fail the job
+        run: exit 1
