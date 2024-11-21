@@ -5,7 +5,7 @@ on:
   workflow_dispatch:
     inputs:
       minutes:
-        description: 'number of minutes to wait'
+        description: 'Number of minutes to wait. Note: integers only'
         required: true
         type: number
         default: 5
