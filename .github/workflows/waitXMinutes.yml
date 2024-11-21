@@ -1,0 +1,17 @@
+name: Wait for x minutes
+run-name: Wait for ${{ github.event.inputs.minutes }} minutes
+
+on:
+  workflow_dispatch:
+    inputs:
+      minutes:
+        description: 'number of minutes to wait'
+        required: true
+        default: "5"
+
+jobs:
+  wait:
+    runs-on: ubuntu-latest
+    steps:
+      - name: wait for specified minutes
+        run: sleep $(( {{ github.event.inputs.minutes }} * 60 ))
