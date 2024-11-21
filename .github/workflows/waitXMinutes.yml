@@ -1,5 +1,5 @@
 name: Wait for x minutes
-run-name: Wait for ${{ github.event.inputs.minutes }} minutes
+run-name: Wait for ${{ github.event.inputs.minutes }} minute(s)
 
 on:
   workflow_dispatch:
