@@ -14,4 +14,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: wait for specified minutes
-        run: sleep $(( {{ github.event.inputs.minutes }} * 60 ))
+        run: sleep $(( ${{ github.event.inputs.minutes }} * 60 ))
