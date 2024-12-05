@@ -1,0 +1,50 @@
+name: Do a lot of jobs
+
+on:
+  workflow_dispatch:
+  pull_request:
+    types: [opened, edited]
+
+jobs:
+  Think-A-Little:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: echo "Hmm..."
+      - run: sleep 1m
+      - run: echo "I think I've got it!"
+      - run: echo "wait..."
+      - run: sleep 2m
+      - run: echo "Ah, yes. The meaning of life is—"
+
+  # Spout-Wisdom:
+  #   runs-on: ubuntu-latest
+  #   strategy:
+  #     matrix:
+  #       wisdom: [one, two, three]
+  #   steps:
+
+  Water-My-Plants:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        plant: ["Sarracenia Purpurea Purpurea", "Nepenthes x St. Gaya", "Nepenthes x ventrata"]
+    steps:
+      - uses: actions/checkout@v4
+      - run: echo "Watering ${{ matrix.plant }}..."
+      - name: Wait a random number of minutes between 5 and 10
+        run: sleep $((5 + RANDOM % 10))m
+      - run: echo "Done watering ${{ matrix.plant }}. It is happy now."
+      
+
+  Feed-My-Animals:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        animal: ["Nessie", "Kylo", "V"]
+    steps:
+      - uses: actions/checkout@v4
+      - run: echo "Feeding ${{ matrix.animal }}..."
+      - name: Wait a random number of minutes between 1 and 10
+        run: sleep $((1 + RANDOM % 10))m
+      - run: echo "Done feeding ${{ matrix.animal }}. They are happy!"
