@@ -35,16 +35,6 @@ jobs:
       - name: Wait a random number of minutes between 5 and 10
         run: sleep $((5 + RANDOM % 10))m
       - run: echo "Done watering ${{ matrix.plant }}. It is happy now."
-      
-      
-      
-
-
-
-
-      
-
-
 
   Feed-My-Animals:
     name: Feed ${{ matrix.animal }}
