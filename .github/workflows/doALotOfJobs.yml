@@ -7,6 +7,7 @@ on:
 
 jobs:
   Think-A-Little:
+    name: Think a little
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -17,18 +18,17 @@ jobs:
       - run: sleep 2m
       - run: echo "Ah, yes. The meaning of life is—"
 
-  # Spout-Wisdom:
-  #   runs-on: ubuntu-latest
-  #   strategy:
-  #     matrix:
-  #       wisdom: [one, two, three]
-  #   steps:
-
   Water-My-Plants:
+    name: Water ${{ matrix.plant }}
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        plant: ["Sarracenia Purpurea Purpurea", "Nepenthes x St. Gaya", "Nepenthes x ventrata"]
+        plant:
+          [
+            "Sarracenia Purpurea Purpurea",
+            "Nepenthes x St. Gaya",
+            "Nepenthes x ventrata",
+          ]
     steps:
       - uses: actions/checkout@v4
       - run: echo "Watering ${{ matrix.plant }}..."
@@ -36,8 +36,12 @@ jobs:
         run: sleep $((5 + RANDOM % 10))m
       - run: echo "Done watering ${{ matrix.plant }}. It is happy now."
       
+      
+
+
 
   Feed-My-Animals:
+    name: Feed ${{ matrix.animal }}
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -48,3 +52,22 @@ jobs:
       - name: Wait a random number of minutes between 1 and 10
         run: sleep $((1 + RANDOM % 10))m
       - run: echo "Done feeding ${{ matrix.animal }}. They are happy!"
+
+  Dominate-The-World:
+    name: Dominate the world!
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Mwahahaha! I am totally going to DOMINATE the world!!"
+      - run: echo "Generating dastardly schemes..."
+      - run: sleep 1m
+      - run: echo "Hiring minions..."
+      - run: sleep 1m
+      - run: echo "Building secret lair..."
+      - run: sleep 1m
+      - run: echo "Mwahahaha! The world is mine!"
+      - run: echo "Wait..."
+      - run: sleep 2m
+      - run: echo "Oh no! It's so late! I have to go to bed now."
+      - run: echo "I'll dominate the world tomorrow."
+      - run: echo "Goodnight <3"
+
