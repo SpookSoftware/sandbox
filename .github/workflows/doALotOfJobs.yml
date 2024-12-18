@@ -67,3 +67,12 @@ jobs:
       - run: echo "I'll dominate the world tomorrow."
       - run: echo "Goodnight <3"
 
+  Fart-Around-Then-Die:
+    name: Fart around then die
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Farting around..."
+      - run: echo "Oh...wait..."
+      - run: echo "I feel my death coming"
+      - run: echo "X_X"
+      - run: exit 1
