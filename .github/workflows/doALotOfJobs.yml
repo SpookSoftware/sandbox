@@ -4,6 +4,8 @@ on:
   workflow_dispatch:
   pull_request:
     types: [opened, edited]
+  repository_dispatch:
+    types: [do-a-lot-of-jobs]
 
 jobs:
   Think-A-Little:
